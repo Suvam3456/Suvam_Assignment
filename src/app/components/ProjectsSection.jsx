@@ -44,9 +44,6 @@ const ProjectsSection = () => {
     setTag(newTag);
   };
 
-  const filteredProjects = projectsData.filter((project) =>
-    project.tag.includes(tag)
-  );
 
   const cardVariants = {
     initial: { y: 50, opacity: 0 },
@@ -61,7 +58,7 @@ const ProjectsSection = () => {
       <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
       </div>
       <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
-        {filteredProjects.map((project, index) => (
+        {projectsData.map((project, index) => (
           <motion.li
             key={index}
             variants={cardVariants}
